@@ -80,13 +80,15 @@ function flatArray (array) {
   return result;
 }
 
-function formatBookmark (bookmark) {
+function formatBookmark(bookmark) {
   // 目前没有找到url之外的类型, 后续添加
   if (bookmark.type === 'url') {
-    return {
+    var obj = {
       url: bookmark.url,
       name: bookmark.name
     }
+    str = JSON.stringify(obj);
+    return str;
   }
   return null;
 }
@@ -134,7 +136,8 @@ function getBookmarkInPinYin () {
   debug(jsonBookmark);
   const allBookmark = getAllBookmarks(jsonBookmark);
   debug('allBookmarks', allBookmark);
-  pinyinBookmark = allBookmark.map(val => {
+  pinyinBookmark = allBookmark.map(str => {
+    val = JSON.parse(str)
     let pinyin = replaceHanZiWithPingYin(val.name);
     debug('pin yin and raw data in getBookmarkInPinYin is', pinyin, val.name);
     let result = JSON.parse(JSON.stringify(val));
