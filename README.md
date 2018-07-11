@@ -3,7 +3,7 @@
 http://www.packal.org/workflow/chrome-bookmarks-0 这个workflow已经做得很好了。
 为什么不直接使用这个workflow呢?
 
-主要的y原因在于不支持中文拼音。
+主要的原因在于不支持中文拼音。
 
 这个workflow的搜索是基于英文字符串的匹配, 如果chrome的书签中包含有中文, 想要通过拼音来匹配是不可能的。
 
